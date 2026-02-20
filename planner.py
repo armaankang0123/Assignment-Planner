@@ -107,8 +107,9 @@ def menu():
 
 def main():
     load()
-    notifs()
+    
     while True:
+        notifs()
         menu()
         while True:
             try:
