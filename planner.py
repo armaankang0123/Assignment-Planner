@@ -79,7 +79,7 @@ def completed_tasks():
     for j, task in enumerate(completed, start=1):
         print(f"{j}. {Fore.GREEN}{task['exam']}{Style.RESET_ALL} | "f"Course: {task['course']} | "f"Due: {task['due_date']} ✅")
 
-    input("\nPress Enter to continue...")
+    input("\nPress Enter to continue-->")
 def notifs():
     if not tasks:
         return
