@@ -85,12 +85,12 @@ def notifs():
         return
     today= datetime.today()
     for i in tasks:
-        if i["completed"]:
+        if not i["completed"]:
             due= datetime.strptime(i["due_date"], "%d-%m-%Y")
             remaining = (due-today).days
 
             if remaining<0:
-                notification.notify(title = "🚨 ASSIGNMENT OVERDUE", message = f"{i['exam']} was due on {i['due']}", timeout= 4)
+                notification.notify(title = "🚨 ASSIGNMENT OVERDUE", message = f"{i['exam']} was due on {i['due_date']}", timeout= 4)
             elif remaining== 0:
                 notification.notify(title="⏰ DUE TODAY",message=f"{i['exam']} DUE TODAY! HURRY UP",timeout=4)
             elif remaining <= 4:
